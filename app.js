@@ -48,6 +48,21 @@ app.get("/view-snippet",async(req,res)=>{
     res.json(snipp)
 })
 
+app.delete("/delete-snippet/:id",async(req,res)=>{
+    
+    try{
+        await Snippet.findByIdAndDelete(req.params.id)
+        res.json({"status":"success"})
+    }
+    catch(error){
+        res.status(500).json({"status":"error"})
+    }
+})
+
+
+
+
+
 app.listen(3000,()=>{
     console.log("server started");
     
