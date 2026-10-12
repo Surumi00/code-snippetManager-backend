@@ -61,9 +61,8 @@ app.delete("/delete-snippet/:id",async(req,res)=>{
 
 
 
+const PORT = process.env.PORT || 3000;
 
-
-app.listen(3000,()=>{
-    console.log("server started");
-    
-})
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+});
